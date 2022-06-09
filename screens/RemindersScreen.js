@@ -15,8 +15,6 @@ import  Toast from 'react-native-root-toast';
 const RemindersScreen = ({ route, navigation }) => {
 
   const [reminders, setReminders] = useState([]);
-
-
   const [display, setDisplay] = useState("All");
 
   const comparator = (item1, item2) => {
@@ -60,7 +58,6 @@ const RemindersScreen = ({ route, navigation }) => {
       console.log(err);
     }
     setupReminderListener((items) => {
-      console.log("setting state with: ", items);
       setReminders(items.sort(comparator));
     });
   }, []);
